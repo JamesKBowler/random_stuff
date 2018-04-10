@@ -25,6 +25,17 @@ iface eth0 inet static
     dns-domain acme.com
     dns-search acme.com
 ```
+### Setup NFS Share
+```shell
+# Server
+sudo apt install nfs-kernel-server
+sudo echo "/path/to/drive     192.168.1.0/24(rw,sync,root_squash,subtree_check)"
+sudo service nfs-kernel-server restart
+sudo exportfs -ra
+
+# Client
+sudo nano /etc/fstab
+nfs-server-ip:/path/to/drive    /mnt/nfs-share      nfs       rw,soft,intr,noatime,x-gvfs-show
 
 ### Check if package installed
 ```shell
