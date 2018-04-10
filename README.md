@@ -34,8 +34,11 @@ sudo service nfs-kernel-server restart
 sudo exportfs -ra
 
 # Client
+sudo mkdir /mnt/nfs-share
 sudo nano /etc/fstab
 nfs-server-ip:/path/to/drive    /mnt/nfs-share      nfs       rw,soft,intr,noatime,x-gvfs-show
+sudo mount -a
+```
 
 ### Check if package installed
 ```shell
