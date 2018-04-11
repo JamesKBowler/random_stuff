@@ -100,7 +100,7 @@ https://docs.kali.org/general-use/kali-linux-sources-list-repositories
 ```shell
 CTRL+ALT+F1 through CTRL+ALT+F6
 ```
-### General Link Structure
+### General Linux Structure
 ```
 /bin/: basic programs
 
