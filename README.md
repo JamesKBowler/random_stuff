@@ -48,3 +48,35 @@ sudo mount -a
 dpkg -l
 ```
 
+### Kali Setup
+```shell
+# Check CPU bits
+grep -qP '^flagss*:.*blmb' /proc/cpuinfo && echo 64-bit || echo 32-bit
+# Confirm md5 hash
+sha256sum kali-linux-2016.2-amd64.iso
+
+# Make bootable USB on Linux
+sudo fdisk -l
+dd if=kali-linux-light-2016.2-amd64.iso of=/dev/sdb bs=512k
+# Windows
+https://sourceforge.net/projects/win32diskimager/
+# Persistance
+# Create and format an additional partition on the USB drive
+end=7gb
+read start _ < <(du -bcm kali-linux-2016.2-amd64.iso | tail -1); echo $start
+parted /dev/sdb mkpart primary $start $end
+# Encrypt
+cryptsetup --verbose --verify-passphrase luksFormat /dev/sdb3
+cryptsetup luksOpen /dev/sdb3 my_usb
+# create an ext3 file system in the partition and label it “persistence”
+mkfs.ext3 -L persistence /dev/mapper/my_usb
+e2label /dev/mapper/my_usb persistence
+# Mount point
+mkdir -p /mnt/my_usb
+mount /dev/mapper/my_usb /mnt/my_usb
+echo "/ union" > /mnt/my_usb/persistence.conf
+umount /dev/mapper/my_usb
+# Close the encrypted channel to our persistence partition.
+cryptsetup luksClose /dev/mapper/my_usb
+
+
