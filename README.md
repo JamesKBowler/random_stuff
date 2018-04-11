@@ -51,6 +51,12 @@ sudo echo "/path/to/drive     192.168.1.0/24(rw,sync,root_squash,subtree_check)"
 sudo service nfs-kernel-server restart
 sudo exportfs -ra
 
+# If using another drive that needs mounting on reboot
+
+blkid  # to find the UUID
+
+UUID="2c5dffeb-816a-432b-9df4-5eb0f39b1781"  /mnt/store       ext4    defaults        0       2
+
 # Client
 sudo mkdir /mnt/nfs-share
 sudo echo "nfs-server-ip:/path/to/drive    /mnt/nfs-share      nfs       rw,soft,intr,noatime,x-gvfs-show" >> /etc/fstab
@@ -176,7 +182,12 @@ uname -a
 /boot
 /lib/modules
 
+who
+id
+
 # Active modules
 lsmod
+
+journalctl -u ssh.service
 ```
 
