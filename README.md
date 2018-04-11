@@ -188,6 +188,12 @@ id
 # Active modules
 lsmod
 
+UUID="2c5dffeb-816a-432b-9df4-5eb0f39b1781"  /mnt/store       ext4    defaults        0       2
+
 journalctl -u ssh.service
 ```
-
+### Finding stuff
+```shell
+find / -name <filename>
+locate <filename>  # Much faster!
+```
