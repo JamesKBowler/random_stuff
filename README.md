@@ -55,7 +55,7 @@ sudo exportfs -ra
 
 blkid  # to find the UUID
 
-UUID="2c5dffeb-816a-432b-9df4-5eb0f39b1781"  /mnt/store       ext4    defaults        0       2
+sudo echo 'UUID="2c5dffeb-816a-432b-9df4-5eb0f39b1781"  /mnt/store       ext4    defaults        0       2' >> /etc/fstab
 
 # Client
 sudo mkdir /mnt/nfs-share
