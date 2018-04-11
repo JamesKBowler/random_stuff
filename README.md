@@ -42,6 +42,10 @@ iface eth0 inet static
     dns-nameservers 10.0.0.1 8.8.8.8
     dns-domain acme.com
     dns-search acme.com
+
+nmcli dev status
+ifconfig eth0 down
+ifconfig eth0 up
 ```
 ### Setup NFS Share
 ```shell
