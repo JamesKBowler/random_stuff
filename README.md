@@ -21,10 +21,12 @@ vmkfstools -z /vmfs/devices/disks/t10.F405E46494C4540046F455B64787D285941707D203
 4. Click Add Row.  
 
     Type these values in the Name and Value columns:
+    
     | Name                              | Value |
     | --------------------------------- |:-----:|
     | isolation.tools.copy.disable      | FALSE |
     | isolation.tools.paste.disable     | FALSE |
+
 
 
 ## Ubuntu
