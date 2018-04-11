@@ -137,4 +137,9 @@ CTRL+ALT+F1 through CTRL+ALT+F6
 /proc/ and /sys/ are specific to the Linux kernel (and not part of the FHS). They are used by the kernel for exporting data to user space.
 ```
 
+# System Priv
+``` shell
+setuid 
+```
+
 
