@@ -140,6 +140,43 @@ CTRL+ALT+F1 through CTRL+ALT+F6
 # System Priv
 ``` shell
 setuid 
+
+chown <user:group file>
+
+chgrp <group> <file>  # alters the owner group
+
+chmod <rights> <file>  # changes the permissions for the file
+
+umask
 ```
 
+### System Monitoring
+```shell
+# CPU & Memory
+stress # Fake CPN issues
+vmstat
+free -m
+top
+htop
+# Disk IO Usage
+uptime
+iotop
+iostat
+sar
+# Network
+netstat -ie or ifconfig
+netstat -s
+netstat -tuna
+nload
+iftop
+speedtest script (python)
+
+# System Information (kernel)
+uname -a
+/boot
+/lib/modules
+
+# Active modules
+lsmod
+```
 
