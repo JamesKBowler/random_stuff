@@ -31,6 +31,8 @@ vmkfstools -z /vmfs/devices/disks/t10.F405E46494C4540046F455B64787D285941707D203
 
 ## Ubuntu
 ```shell
+$ nano /etc/network/interfaces
+
 # The primary network interface
 auto eth0
 iface eth0 inet static
@@ -43,9 +45,19 @@ iface eth0 inet static
     dns-domain acme.com
     dns-search acme.com
 
-nmcli dev status
-ifconfig eth0 down
-ifconfig eth0 up
+# Wireless
+$ wpa_passphrase myssid wpa-password
+$ nano /etc/network/interfaces
+auto wlan0
+iface wlan0 inet dhcp
+     wpa-ssid myssid
+     wpa-psk {whatever the psk hash was}
+
+
+
+$ nmcli dev status
+$ ifconfig eth0 down
+$ ifconfig eth0 up
 ```
 ### Setup NFS Share
 ```shell
