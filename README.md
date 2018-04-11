@@ -92,5 +92,10 @@ echo "/ union" > /mnt/my_usb/persistence.conf
 umount /dev/mapper/my_usb
 # Close the encrypted channel to our persistence partition.
 cryptsetup luksClose /dev/mapper/my_usb
+```
+### Kali Linux Repositories
+https://docs.kali.org/general-use/kali-linux-sources-list-repositories
+
+
 
 
