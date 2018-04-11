@@ -38,7 +38,7 @@ sudo exportfs -ra
 
 # Client
 sudo mkdir /mnt/nfs-share
-sudo echo nfs-server-ip:/path/to/drive    /mnt/nfs-share      nfs       rw,soft,intr,noatime,x-gvfs-show > /etc/fstab
+sudo echo "nfs-server-ip:/path/to/drive    /mnt/nfs-share      nfs       rw,soft,intr,noatime,x-gvfs-show" > /etc/fstab
 sudo mount -a
 ```
 
