@@ -14,7 +14,7 @@ ls -lsh /vmfs/volumes
 vmkfstools -z /vmfs/devices/disks/t10.F405E46494C4540046F455B64787D285941707D203F45765 /vmfs/volumes/Datastore2/localrdm1/localrdm1.vmdk
 ```
 
-# Copy/Paste
+### Copy/Paste from host and between VMs
 1. Power off the virtual machine.
 2. Click Edit Settings on VM
 3. Navigate to Options > Advanced > General and click Configuration Parameters.
