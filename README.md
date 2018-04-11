@@ -101,7 +101,7 @@ https://docs.kali.org/general-use/kali-linux-sources-list-repositories
 CTRL+ALT+F1 through CTRL+ALT+F6
 ```
 ### General Link Structure
-
+```
 /bin/: basic programs
 
 /boot/: Kali Linux kernel and other files required for its early boot process
@@ -135,6 +135,6 @@ CTRL+ALT+F1 through CTRL+ALT+F6
 /var/: variable data handled by daemons. This includes log files, queues, spools, and caches.
 
 /proc/ and /sys/ are specific to the Linux kernel (and not part of the FHS). They are used by the kernel for exporting data to user space.
-
+```
 
 
