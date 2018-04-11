@@ -47,13 +47,13 @@ iface eth0 inet static
 ```shell
 # Server
 sudo apt install nfs-kernel-server
-sudo echo "/path/to/drive     192.168.1.0/24(rw,sync,root_squash,subtree_check)" > /etc/export
+sudo echo "/path/to/drive     192.168.1.0/24(rw,sync,root_squash,subtree_check)" >> /etc/export
 sudo service nfs-kernel-server restart
 sudo exportfs -ra
 
 # Client
 sudo mkdir /mnt/nfs-share
-sudo echo "nfs-server-ip:/path/to/drive    /mnt/nfs-share      nfs       rw,soft,intr,noatime,x-gvfs-show" > /etc/fstab
+sudo echo "nfs-server-ip:/path/to/drive    /mnt/nfs-share      nfs       rw,soft,intr,noatime,x-gvfs-show" >> /etc/fstab
 sudo mount -a
 ```
 
