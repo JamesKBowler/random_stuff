@@ -196,4 +196,13 @@ journalctl -u ssh.service
 ```shell
 find / -name <filename>
 locate <filename>  # Much faster!
+
+dmesg | grep CPU0:  # CPU
+lspci | grep Ethernet ~ Network
+lspci -v -s `lspci | grep VGA | cut -f1 -d\ ` # Graphics
+uname -r # System
+free # Memory
+df # Disk
+
+
 ```
