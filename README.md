@@ -221,6 +221,10 @@ lspci -v -s `lspci | grep VGA | cut -f1 -d\ ` # Graphics
 uname -r # System
 free # Memory
 df # Disk
-
-
 ```
+
+### Centos
+```shell
+sudo yum -y install bash-completion
+```
+
