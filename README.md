@@ -80,6 +80,10 @@ sudo mkdir /mnt/nfs-share
 sudo echo "nfs-server-ip:/path/to/drive    /mnt/nfs-share      nfs       rw,soft,intr,noatime,x-gvfs-show" >> /etc/fstab
 sudo mount -a
 ```
+### SMB
+```shell
+//192.168.6.200/ubuntubox /home/nonroot/ubuntubox cifs guest,uid=1000,iocharset=utf8 0 0
+```
 
 ### Check if package installed
 ```shell
