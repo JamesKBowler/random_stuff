@@ -95,7 +95,7 @@ sha256sum kali-linux-2016.2-amd64.iso
 
 # Make bootable USB on Linux
 sudo fdisk -l
-dd if=kali-linux-light-2016.2-amd64.iso of=/dev/sdb bs=512k
+dd if=kali-linux-light-2016.2-amd64.iso of=/dev/sdb bs=512k status=progress
 # Windows
 https://sourceforge.net/projects/win32diskimager/
 # Persistance
