@@ -1,6 +1,10 @@
 # cheat-sheet
 
-
+# Convert VDI to VMDK
+"""shell
+VBoxManage list hdds
+VBoxManage clonehd f83fa853-eded-4e67-9927-05fb72544c3d win764.vmdk --format vmdk
+"""
 
 ## ESXI
 ### Disk Cloning
