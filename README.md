@@ -187,7 +187,7 @@ umask
 ### System Monitoring
 ```shell
 # CPU & Memory
-stress # Fake CPN issues
+stress # Fake CPU issues
 vmstat
 free -m
 top
