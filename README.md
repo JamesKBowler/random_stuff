@@ -14,6 +14,11 @@ mkdir /vmfs/volumes/destination_datastore/virtual_machine/
 vmkfstools -i /vmfs/volumes/src_datastore/vm_name/vm_name.vmdk /vmfs/volumes/dst_datastore/vm_name/vm_name.vmdk -d thin
 ```
 
+## VMDK Disk Merge
+```shell
+vmware-vdiskmanager.exe -r "C:\Users\root\SOURCE\main_disk_in_vmx_file.vmdk" -t 0 "C:\Users\root\DEST\new_merged_disk.vmdk"
+```
+
 ### Raw Device Mapping for local storage
 ```shell
 ls -lsh /vmfs/volumes
