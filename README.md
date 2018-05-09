@@ -262,4 +262,9 @@ df # Disk
 sudo yum -y install bash-completion
 ```
 
-####
+
+### appImage
+```shell
+chmod a+x example.AppImage
+./example.AppImage
+```
