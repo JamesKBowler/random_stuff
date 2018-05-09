@@ -132,6 +132,25 @@ umount /dev/mapper/my_usb
 # Close the encrypted channel to our persistence partition.
 cryptsetup luksClose /dev/mapper/my_usb
 ```
+### Change the hostname
+```shell
+nano /etc/hostname
+nano /etc/hosts
+```
+### Add none root User
+```shell
+# Add the user with $HOME directory
+useradd -m nonroot
+# Add password
+passwd nonroot
+# Give sudo priv
+usermod -a -G sudo nonroot
+# Change users shell to bash
+chsh -s /bin/bash nonroot
+```
+
+
+
 ### Kali Linux Repositories
 https://docs.kali.org/general-use/kali-linux-sources-list-repositories
 
