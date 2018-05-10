@@ -94,6 +94,7 @@ blkid  # to find the UUID
 sudo echo 'UUID="2c5dffeb-816a-432b-9df4-5eb0f39b1781"  /mnt/store       ext4    defaults        0       2' >> /etc/fstab
 
 # Client
+sudo apt install nfs-common
 sudo mkdir /mnt/nfs-share
 sudo echo "nfs-server-ip:/path/to/drive    /mnt/nfs-share      nfs       rw,soft,intr,noatime,x-gvfs-show" >> /etc/fstab
 sudo mount -a
