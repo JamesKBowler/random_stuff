@@ -45,6 +45,15 @@ esxcli storage nfs remove -v nfs_share_name
     | isolation.tools.copy.disable      | FALSE |
     | isolation.tools.paste.disable     | FALSE |
 
+### ESXI UI Intstall
+```shell
+# Download
+https://labs.vmware.com/flings/esxi-embedded-host-client
+# vib in /tmp directory & install
+esxcli software vib install -v /tmp/esxui_signed.vib
+# Restart services
+/etc/init.d/rhttpproxy restart
+```
 
 
 ## Ubuntu
