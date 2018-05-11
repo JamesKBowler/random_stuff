@@ -55,6 +55,37 @@ esxcli software vib install -v /tmp/esxui_signed.vib
 /etc/init.d/rhttpproxy restart
 ```
 
+### Enable “Guest IP Hack”
+```shell
+esxcli system settings advanced set -o /Net/GuestIPHack -i 1
+```
+
+### Open VNC Ports on the ESXI Firewall
+```shell
+# Change the file permissions
+chmod 644 /etc/vmware/firewall/service.xml
+chmod +t /etc/vmware/firewall/service.xml
+
+# Append to end of the service.xml file before the last </ConfigRoot> tag
+<service id="1000">
+  <id>packer-vnc</id>
+  <rule id="0000">
+    <direction>inbound</direction>
+    <protocol>tcp</protocol>
+    <porttype>dst</porttype>
+    <port>
+      <begin>5900</begin>
+      <end>6000</end>
+    </port>
+  </rule>
+  <enabled>true</enabled>
+  <required>true</required>
+</service>
+
+# Restore the permissions and reload the firewall
+chmod 444 /etc/vmware/firewall/service.xml
+esxcli network firewall refresh
+```
 
 ## Ubuntu
 ```shell
