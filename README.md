@@ -63,22 +63,26 @@ esxcli system settings advanced set -o /Net/GuestIPHack -i 1
 # Change the file permissions
 chmod 644 /etc/vmware/firewall/service.xml
 chmod +t /etc/vmware/firewall/service.xml
-# Append to end of the service.xml file before the last </ConfigRoot> tag
-sed '$i \
-<service id="1000">
-  <id>packer-vnc</id>
-  <rule id="0000">
-    <direction>inbound</direction>
-    <protocol>tcp</protocol>
-    <porttype>dst</porttype>
-    <port>
-      <begin>5900</begin>
-      <end>6000</end>
-    </port>
-  </rule>
-  <enabled>true</enabled>
-  <required>true</required>
-</service>'file
+# Append to end of the service.xml before </ConfigRoot> tag
+sed -i '$i \
+\
+  <!-- VNC for Packer Module --> \
+  <service id="1000"> \
+    <id>packer-vnc</id> \
+    <rule id="0000"> \
+      <direction>inbound</direction> \
+      <protocol>tcp</protocol> \
+      <porttype>dst</porttype> \
+      <port> \
+        <begin>5900</begin> \
+        <end>6000</end> \
+      </port> \
+    </rule> \
+    <enabled>true</enabled> \
+    <required>true</required> \
+  </service> \
+\ 
+' /etc/vmware/firewall/service.xml
 # Restore the permissions and reload the firewall
 chmod 444 /etc/vmware/firewall/service.xml
 esxcli network firewall refresh
