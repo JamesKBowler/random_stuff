@@ -11,6 +11,7 @@ https://www.v-front.de/2013/11/how-to-make-your-unsupported-sata-ahci.html
 
 https://forums.servethehome.com/index.php?threads/troubleshooting-gpu-passthrough-esxi-6-5.12631/page-6
 
+https://forums.servethehome.com/index.php?threads/esxi-6-0-passthrough-onboard-sata.8902/
 ## ESXI
 
 ### ESXI Backup
