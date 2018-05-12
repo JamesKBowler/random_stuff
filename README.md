@@ -9,6 +9,7 @@ VBoxManage clonehd f83fa853-eded-4e67-9927-05fb72544c3d win764.vmdk --format vmd
 https://kb.vmware.com/s/article/2004605
 https://www.v-front.de/2013/11/how-to-make-your-unsupported-sata-ahci.html
 
+https://forums.servethehome.com/index.php?threads/troubleshooting-gpu-passthrough-esxi-6-5.12631/page-6
 
 ## ESXI
 
