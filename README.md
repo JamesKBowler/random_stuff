@@ -62,8 +62,6 @@ vim-cmd vmsvc/getallvms
 echo ""
 echo "Enter vimid of $MACHINE"
 read VIMID
-echo ""
-echo ""
  
 fi
  
